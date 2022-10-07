@@ -5,6 +5,12 @@ import express from "express"
 // const express = require("express");
 import dotenv from "dotenv"
 import mongoose from "mongoose"
+//auth.js ...etc
+import authRoute from "./routes/auth.js"
+import usersRoute from "./routes/users.js"
+import hotelsRoute from "./routes/hotels.js"
+import roomsRoute from "./routes/rooms.js"
+
 
 const app = express()
 dotenv.config()
@@ -26,10 +32,14 @@ mongoose.connection.on("connected", () => {
     console.log("mongoDB connected!")
 })
 
-app.get("/users", (req,  res) =>{
-    res.send("Hello first request!")
-})
-
+//middlewares
+app.use("/api/auth", authRoute);
+//users
+app.use("/api/users", usersRoute);
+//hotels
+app.use("/api/hotels", hotelsRoute);
+//rooms
+app.use("/api/rooms", roomsRoute);
 
 app.listen(8000, ()=>{
     connect()
