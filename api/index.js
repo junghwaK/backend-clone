@@ -45,8 +45,15 @@ app.use("/api/rooms", roomsRoute);
 
 //err handleing middleware
 app.use((err, req, res, next) => {
-    return res.status(500).json("Hello error from handler!")
-})
+    const errorStatus = err.status || 500
+    const errorMessage = err.message || "Somethin went wrong!"
+    return res.status(errorStatus).json({
+        success: false,
+        status: errorStatus,
+        message: errorMessage,
+        stack: err.stack
+    });
+});
 
 app.listen(8000, ()=>{
     connect()
