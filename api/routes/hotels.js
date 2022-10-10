@@ -1,6 +1,6 @@
 //use cookies, json, web tokens, ete.. 
 import express from "express";
-import { createHotel, deleteHotel, getHotel, updateHotel } from "../controllers/hotel.js";
+import { createHotel, deleteHotel, getHotel, updateHotel, getHotels } from "../controllers/hotel.js";
 import Hotel from "../models/Hotels.js";
 // import { createError } from "../utils/error.js";
 
