@@ -22,7 +22,7 @@ export const deleteUser = async (req, res, next) =>{
         //delete하므로 어떤것도 return하지 않을것이다.
         await User.findByIdAndDelete(req.params.id);
         //지웠을 때 메시지를 보내준다. 
-        res.status(200).json("Hotel has been deleted.")
+        res.status(200).json("User has been deleted.")
     }catch(err){
         next(err);
     }
