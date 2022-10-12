@@ -8,7 +8,7 @@
     "start": "nodemon index.js"
   },
   "repository": {
-    "type": "git",
+    "type": "git", 
     "url": "git+https://github.com/junghwaK/backend-clone.git"
   },
   "keywords": [],
