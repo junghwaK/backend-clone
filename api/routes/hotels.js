@@ -1,6 +1,6 @@
 //use cookies, json, web tokens, ete.. 
 import express from "express";
-import { createHotel, deleteHotel, getHotel, updateHotel, getHotels } from "../controllers/hotel.js";
+import { createHotel, deleteHotel, getHotel, updateHotel, getHotels, countByCity, countByType } from "../controllers/hotel.js";
 import Hotel from "../models/Hotels.js";
 import { verifyAdmin } from "../utils/verifyToken.js";
 // import { createError } from "../utils/error.js";
@@ -16,11 +16,12 @@ router.put("/:id",  verifyAdmin, updateHotel);
 //DELETE
 router.delete("/:id",  verifyAdmin, deleteHotel);
 //GET
-router.get("/:id", getHotel);
+router.get("/find:id", getHotel);
 
 //GET ALL
 //모든 호텔이니까 특정 id는 이제 필요없다. 
 router.get("/", getHotels);
-
+router.get("/countByCity", countByCity);
+router.get("/countByType", countByType);
 
 export default router
