@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User.js");
 const bcrypt = require("bcrypt");
 
+
 //REGISTER
 router.post("/register", async (req, res) => {
     try{
@@ -25,6 +26,22 @@ router.post("/register", async (req, res) => {
 });
 
 //LOGIN
-// router.post("login", (req, res))
+router.post("/login", async(req, res) => {
+    try{
+        const user = await User.findOne({email:req.body.email});
+        // console.log( '__user', user );
+        
+        !user && res.status(404).json("user not found");
+        console.log(req.body.password, user.password);
+
+        const validPassword = await bcrypt.compare(req.body.password, user.password)
+        console.log(validPassword);
+        !validPassword && res.status(400).json("Worng password")
+
+        res.status(200).json(user)
+    } catch(err){
+        console.log(err);
+    }
+});
 
 module.exports = router;
