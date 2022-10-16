@@ -10,8 +10,10 @@ const authRoute = require("./routes/auth.js");
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL, {useNewUrlParser : true}, ()=>{
-    console.log("Connected to MongoDB")
+mongoose.connect(process.env.MONGO_URL, {useNewUrlParser : true}, (err)=>{
+    if(err) console.log(err)
+    else
+    console.log("Connected to MongoDB");
 });
 
 //middleware
