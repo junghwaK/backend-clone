@@ -27,6 +27,19 @@ router.put("/:id", async (req, res) => {
     }
   });
 //DELETE A POST
+router.delete("/:id", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (post.userId === req.body.userId) {
+      await post.deleteOne();
+      res.status(200).json("the post has been deleted");
+    } else {
+      res.status(403).json("you can deleted only your post");
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 //LIKE A POST
 //GET A POST
 //GET TIMELINE POSTS (of the user following, 그니까 팔로잉하는애들꺼 post가져온다고)
