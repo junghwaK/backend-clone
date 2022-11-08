@@ -27,6 +27,7 @@ let e : number[] = [1, 2];
 
 
 // type 'Alias' : it allow us to write less code.
+// It can be reuse many times. And Alias can do any types. Even we can make for the age type.
 type User = {
     name : string,
     age? :number
@@ -41,3 +42,13 @@ const Terry : User = {
     name: "Terry",
     age: 20 
 }
+
+//return tpye of function
+//colon ':' and type -> How we can type object explicit way
+function userMaker(name: string) : User {
+    return {
+        name
+    }
+}
+const jay = userMaker("jay")
+jay.age = 22
