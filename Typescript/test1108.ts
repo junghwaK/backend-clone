@@ -17,11 +17,27 @@ let e : number[] = [1, 2];
 
 
 //Optional Type
-const user : {
-    name:string,
-    age?:number
-} = {
-    name : "Jay"
+
+// const user : {
+//     name:string,
+//     age?:number
+// } = {
+//     name : "Jay"
+// }
+
+
+// type 'Alias' : it allow us to write less code.
+type User = {
+    name : string,
+    age? :number
 }
 
+//We already have a User. So we can remove the user, infont of Jay or Terry
+const Jay : User = {
+    name: "Jay"
+}
 
+const Terry : User = {
+    name: "Terry",
+    age: 20 
+}
