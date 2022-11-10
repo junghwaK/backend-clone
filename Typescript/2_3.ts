@@ -10,3 +10,8 @@ type Player = {
 const playerMaker = (name:string) : Player => ({name})
 const nico = playerMaker("nico")
 nico.age = 12
+
+//another example
+const numbers : readonly number[] = [1, 2, 3, 4]
+//'push' does not exist on read only. but if I remove the read only, it works
+numbers.push(1)
