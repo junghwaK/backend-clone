@@ -4,6 +4,7 @@ type Name = string;
 type Player = {
     //I get the protection somebody try to change the n ame of our Player
     readonly name:Name
+    //age? means it's number or undefined
     age?: Age
 }
 
@@ -26,3 +27,8 @@ player1[0] = 1
 //can combine tuple and read only
 //const player1: readonly [string, number, boolean] = ["Jay", 1, true]
 
+let f : undefined = undefined
+let g : null = null
+//Type any, 'any' could be anything.
+//But when you use 'any', you basically are in the JS.
+let h = []
