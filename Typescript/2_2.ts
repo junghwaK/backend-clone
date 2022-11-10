@@ -45,10 +45,11 @@ const Terry : User = {
 
 //return tpye of function
 //colon ':' and type -> How we can type object explicit way
-function userMaker(name: string) : User {
+function userMaker (name: string) : User {
     return {
         name
     }
 }
+const userMaker = (name:string) : User => ({name})
 const jay = userMaker("jay")
 jay.age = 22
