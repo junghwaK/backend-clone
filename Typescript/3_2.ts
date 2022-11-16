@@ -20,7 +20,17 @@ const superPrint: SuperPrint = (arr) => {
 }
 
 
-superPrint([1, 2,  3, 4])
-superPrint([true, false, true])
-superPrint(["h", "i", "j"])
-superPrint([1, 2, true, false])
+const k = superPrint([1, 2,  3, 4])
+const l = superPrint([true, false, true])
+const m = superPrint(["h", "i", "j"])
+const o = superPrint([1, 2, true, false])
+
+
+//final
+type SuperPrint1 = {
+    <T>(arr: T[]): T
+}
+
+const superPrint1 : SuperPrint = (arr) => arr[0]
+
+//...
