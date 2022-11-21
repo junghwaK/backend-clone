@@ -21,3 +21,5 @@ class Player extends User{
 const j = new Player("junghwa", "kim", "정화");
 
 j.getFullname()
+
+
