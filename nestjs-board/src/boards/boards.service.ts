@@ -23,5 +23,7 @@ export class BoardsService {
             //model에 우리가 PUBLIC아님 PRIVATE 두개만 정의해줘서 이렇게 두개만 뜸
             status: BoardStatus.PUBLIC
         }
+        this.boards.push(board);
+        return board;
     }
 }
