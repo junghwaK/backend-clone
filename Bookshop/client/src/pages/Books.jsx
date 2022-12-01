@@ -29,6 +29,8 @@ const Books = () => {
                         <h2>{book.title}</h2>
                         <p>{book.desc}</p>
                         <span>{book.price}</span>
+                        <button className="delete">삭제</button>
+                        <button className="update">수정</button>
                     </div>
                 ))}
             </div>
