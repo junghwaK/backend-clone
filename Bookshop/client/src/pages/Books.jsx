@@ -40,7 +40,7 @@ const Books = () => {
                         <p>{book.desc}</p>
                         <span>{book.price}</span>
                         <button className="delete" onClick={()=>handleDelete(book.id)}>삭제</button>
-                        <button className="update">수정</button>
+                        <button className="update"><Link to={`/update/${book.id}`}>수정</Link></button>
                     </div>
                 ))}
             </div>
