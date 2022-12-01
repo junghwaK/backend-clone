@@ -18,6 +18,16 @@ const Books = () => {
         fetchAllBooks();
     }, []);
 
+    const handleDelete = async (id) =>{
+        try{
+            await axios.delete("http://localhost:8800/books/" + id)
+            //reload the page
+            window.location.reload()
+        }catch (err) {
+            console.log(err)
+        }
+    }
+
     return (
         <div>
             <h1>정화네 서점</h1>
@@ -29,7 +39,7 @@ const Books = () => {
                         <h2>{book.title}</h2>
                         <p>{book.desc}</p>
                         <span>{book.price}</span>
-                        <button className="delete">삭제</button>
+                        <button className="delete" onClick={()=>handleDelete(book.id)}>삭제</button>
                         <button className="update">수정</button>
                     </div>
                 ))}
