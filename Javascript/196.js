@@ -4,3 +4,15 @@ while (num < 10) {
     console.log(num);
     num++;
 }
+
+let count = 0;
+while(count < 10){
+    //1~10반복
+    count++;
+    //0~9까지 출력
+    console.log(count);
+}
+
+//-> for문으로 치환하면
+for(let i = 1; i<=10; i++);
+
