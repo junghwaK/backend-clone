@@ -16,3 +16,10 @@ while(count < 10){
 //-> for문으로 치환하면
 for(let i = 1; i<=10; i++);
 
+const SECRET = "BabyHippo";
+
+let guess = prompt("enter the secret code...");
+while(guess !==SECRET) {
+    guess = prompt("enter the secret code...");
+}
+console.log("CONGRATS YOU GOT THE SECRET!!!"); 
