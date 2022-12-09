@@ -23,3 +23,22 @@ while(guess !==SECRET) {
     guess = prompt("enter the secret code...");
 }
 console.log("CONGRATS YOU GOT THE SECRET!!!"); 
+
+
+//The Break Keyword
+let targetNum = Math.floor(Math.random() * 10);
+let guess1 = Math.floor(Math.random() * 10);
+while (true) {
+    guess1 = Math.floor(Math.random() * 10);
+    console.log(`CORRECT! Guessed: ${guess1} & target was: ${targetNum}`);
+    break;
+} else { 
+    console.log(`Guessed ${guess1}... Incorrect!`);
+}
+
+let input = prompt("Hey, say something!")
+while (true) {
+    input = prompt(input);
+    if (input.toLocaleLowerCase() === "stop copying me") break;
+}
+console.log( "OK YOU WIN!" )
